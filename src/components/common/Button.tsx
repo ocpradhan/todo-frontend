@@ -10,7 +10,7 @@ export default function Button({
 }: ButtonProps) {
   return (
     <button
-      className={`${bgClasses} flex items-center justify-around w-fit h-5 px-2 py-4 text-primary-50 rounded-lg gap-2 cursor-pointer font-medium text-sm active:scale-95  transition duration-300 ease-in-out ${className}`}
+      className={`${bgClasses} flex items-center justify-around w-fit h-5 px-2 py-4 text-primary-50 rounded-lg gap-2 cursor-pointer font-medium text-sm active:scale-95  transition duration-300 ease-in-out ${className} disabled:opacity-50`}
       {...props}
     >
       {children}

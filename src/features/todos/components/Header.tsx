@@ -1,8 +1,13 @@
+import { useState } from "react";
+
 import { Calendar, Flag, PlusIcon, Search } from "lucide-react";
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
+
 import Button from "../../../components/common/Button";
 import Input from "../../../components/common/Input";
+import RadioButton from "../../../components/common/RadioButton";
 import Modal from "../../../components/common/Modal";
-import { useState } from "react";
 
 export default function Header() {
   const [isOpenModal, setIsOpenModal] = useState(false);
@@ -14,7 +19,7 @@ export default function Header() {
   return (
     <header className="min-w-0 border-border border-b grid grid-cols-1 md:grid-cols-[1fr_auto] px-5 py-5 gap-5">
       <div className="flex flex-col gap-1">
-        <h3 className="font-semibold text-3xl text-heading">Today 2</h3>
+        <h3 className="font-semibold text-3xl text-heading">Today</h3>
         <p className="text-sm text-body">Focus on what matters today</p>
       </div>
 
@@ -25,52 +30,67 @@ export default function Header() {
       </div>
 
       <Modal isOpen={isOpenModal} closeModal={setIsOpenModal}>
-        <label htmlFor="taskTitle">Task Title</label>
-        <Input
-          type="text"
-          id="taskTitle"
-          name="taskTitle"
-          placeholder="What needs to be done?"
-        />
-
-        <label htmlFor="description">
-          Description <span>(Optional)</span>
-        </label>
-        <Input
-          type="text"
-          id="description"
-          name="description"
-          placeholder="Add more details..."
-        />
-
-        <div className="flex gap-5">
-          <div>
-            <label htmlFor="dueDate" className="flex gap-2">
-              <span className="inline-flex items-center gap-4 font-semibold text-body">
-                <Calendar size={15} />
-              </span>
-              Due Date
+        <div className="flex flex-col gap-5">
+          <div className="flex flex-col gap-1">
+            <label htmlFor="taskTitle" className="text-heading">
+              Task Title
             </label>
             <Input
-              name="dueDate"
-              id="dueDate"
-              placeholder="Add more details..."
-              type="date"
+              type="text"
+              id="taskTitle"
+              name="taskTitle"
+              placeholder="What needs to be done?"
             />
           </div>
-          <div>
-            <div className="flex gap-2 items-center">
-              <span className="inline-flex items-center gap-4 font-semibold text-body">
-                <Flag size={15} />
-              </span>
-              Priority
+
+          <div className="flex flex-col gap-1">
+            <label htmlFor="description" className="text-heading">
+              Description <span>(Optional)</span>
+            </label>
+            <Input
+              type="text"
+              id="description"
+              name="description"
+              placeholder="Add more details..."
+            />
+          </div>
+
+          <div className="flex gap-5">
+            <div className="flex flex-col gap-1">
+              <label htmlFor="dueDate" className="flex gap-2 text-heading">
+                <span className="inline-flex items-center gap-4 font-semibold text-body">
+                  <Calendar size={15} />
+                </span>
+                Due Date
+              </label>
+              {/* <Input
+                name="dueDate"
+                id="dueDate"
+                placeholder="Add more details..."
+                type="date"
+              /> */}
+              <DatePicker
+                name="dueDate"
+                id="dueDate"
+                dateFormat="MM/dd/yyyy"
+                selected={new Date()}
+                className="w-full border outline-none! border-border rounded-lg px-2 h-8  focus:border-primary-600!
+    focus:border! focus:ring-2! focus:ring-blue-500/50! transition duration-300 bg-page"
+              />
             </div>
-            <input type="radio" name="priority" id="high" />
-            <label htmlFor="high">High</label>
-            <input type="radio" id="medium" name="priority" />
-            <label htmlFor="medium">Medium</label>
-            <input type="radio" id="low" name="priority" />
-            <label htmlFor="low">Low</label>
+            <div>
+              <div className="flex gap-1 items-center text-heading">
+                <span className="inline-flex items-center gap-4 font-semibold text-body">
+                  <Flag size={15} />
+                </span>
+                Priority
+              </div>
+              <div className="flex items-center ujstify-center gap-1">
+                <RadioButton type="high" />
+                <RadioButton type="medium" className="w-22!" />
+                <RadioButton type="low" />
+              </div>
+            </div>
           </div>
         </div>
       </Modal>

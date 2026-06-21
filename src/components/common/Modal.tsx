@@ -21,7 +21,7 @@ export default function Modal({ children, isOpen, closeModal }: ModalProps) {
   return createPortal(
     <div className="fixed inset-0 z-50 flex items-center justify-center backdrop-blur-sm bg-black/20 transition duration-300 ease-in-out">
       <div className="bg-white rounded-2xl shadow-2xl max-w-md w-full ">
-        <div className="flex items-center justify-between p-6">
+        <div className="flex items-center justify-between px-6 py-4">
           <h2 className="font-bold text-lg text-heading">Add New Task</h2>
           <Button onClick={handleModalClose} bgClasses="">
             <X size={15} className="text-muted" />

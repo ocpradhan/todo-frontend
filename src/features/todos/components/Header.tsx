@@ -14,7 +14,7 @@ export default function Header() {
   return (
     <header className="min-w-0 border-border border-b grid grid-cols-1 md:grid-cols-[1fr_auto] px-5 py-5 gap-5">
       <div className="flex flex-col gap-1">
-        <h3 className="font-semibold text-3xl text-heading">Today</h3>
+        <h3 className="font-semibold text-3xl text-heading">Today 2</h3>
         <p className="text-sm text-body">Focus on what matters today</p>
       </div>
 

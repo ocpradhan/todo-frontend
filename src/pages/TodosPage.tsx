@@ -15,7 +15,7 @@ export default function TodosPage() {
 
   return (
     <div
-      className={`grid h-dvh transition-[grid-template-columns] duration-300 ease-in-out ${
+      className={`grid h-dvh transition-[grid-template-columns] duration-300 ease-in-out grid-rows-[auto_1fr] ${
         isDesktop ? "grid-cols-[64px_1fr]" : "grid-cols-[240px_1fr]"
       }`}
     >

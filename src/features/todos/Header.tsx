@@ -83,7 +83,7 @@ export default function Header() {
                 </span>
                 Priority
               </div>
-              <div className="flex items-center ujstify-center gap-1">
+              <div className="flex items-center justify-center gap-1">
                 <RadioButton type="high" />
                 <RadioButton type="medium" className="w-22!" />
                 <RadioButton type="low" />

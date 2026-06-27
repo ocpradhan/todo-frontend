@@ -4,6 +4,7 @@ import { useOutletContext } from "react-router";
 
 export default function AllTasks() {
   const tasks: Task[] = useOutletContext();
+
   return (
     <>
       {tasks.map((task: Task) => (

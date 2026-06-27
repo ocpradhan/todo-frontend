@@ -4,7 +4,7 @@ import {
   CircleCheck,
   ListTodo,
 } from "lucide-react";
-import type { NavItemProps } from "../types/navItem.types";
+import type { NavItemProps } from "./types/navItem.types";
 import NavItem from "./NavItemList";
 
 type NavListProps = { className?: string; isCollapsed?: boolean };

@@ -1,5 +1,5 @@
 import { Outlet } from "react-router";
-import { tasks } from "../../../mocks/todos";
+import { tasks } from "../../mocks/todos";
 
 export default function TaskArea() {
   return (

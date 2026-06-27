@@ -4,13 +4,17 @@ import { Calendar, Flag, PlusIcon, Search } from "lucide-react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 
-import Button from "../../../components/common/Button";
-import Input from "../../../components/common/Input";
-import RadioButton from "../../../components/common/RadioButton";
-import Modal from "../../../components/common/Modal";
+import Button from "../../ui/Button";
+import Input from "../../ui/Input";
+import RadioButton from "../../ui/RadioButton";
+import Modal from "../../ui/Modal";
+import { useLocation } from "react-router";
+import { getHeaderContent } from "../../utils/getHeaderContent";
 
 export default function Header() {
+  const location = useLocation();
   const [isOpenModal, setIsOpenModal] = useState(false);
+  const { title, subHeading } = getHeaderContent(location.pathname);
 
   const handleModalOpen = () => {
     setIsOpenModal(true);
@@ -19,8 +23,8 @@ export default function Header() {
   return (
     <header className="min-w-0 border-border border-b grid grid-cols-1 md:grid-cols-[1fr_auto] px-5 py-5 gap-5">
       <div className="flex flex-col gap-1">
-        <h3 className="font-semibold text-3xl text-heading">Today</h3>
-        <p className="text-sm text-body">Focus on what matters today</p>
+        <h3 className="font-semibold text-3xl text-heading">{title}</h3>
+        <p className="text-sm text-body">{subHeading}</p>
       </div>
 
       <div className="flex md:justify-self-end items-start row-start-3 md:row-start-1 md:col-start-2">
@@ -63,12 +67,6 @@ export default function Header() {
                 </span>
                 Due Date
               </label>
-              {/* <Input
-                name="dueDate"
-                id="dueDate"
-                placeholder="Add more details..."
-                type="date"
-              /> */}
               <DatePicker
                 name="dueDate"
                 id="dueDate"

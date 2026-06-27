@@ -1,5 +1,5 @@
 import { Calendar } from "lucide-react";
-import { formatDate } from "../../../utils/formatDate";
+import { formatDate } from "../../utils/formatDate";
 
 type DateShowerProps = {
   children: Date;

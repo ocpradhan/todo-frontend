@@ -1,10 +1,10 @@
 import PriorityTag from "./PriorityTag";
 import { Trash2Icon } from "lucide-react";
 
-import type { Task } from "../types/todo.types";
+import type { Task } from "./types/todo.types";
 import DateShower from "./DateShower";
-import Checkbox from "../../../components/common/Checkbox";
-import Button from "../../../components/common/Button";
+import Checkbox from "../../ui/Checkbox";
+import Button from "../../ui/Button";
 import { useState } from "react";
 
 type TaskItemProps = {

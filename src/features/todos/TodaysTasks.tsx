@@ -1,8 +1,8 @@
-import type { Task } from "../types/todo.types";
+import type { Task } from "./types/todo.types";
 import TaskItem from "./TaskItem";
 import { useOutletContext } from "react-router";
 
-export default function UpcomingTasks() {
+export default function TodaysTasks() {
   const tasks: Task[] = useOutletContext();
   return (
     <>

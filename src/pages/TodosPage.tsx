@@ -1,7 +1,7 @@
 import { useState } from "react";
-import Header from "../components/Header";
-import Sidebar from "../components/Sidebar";
-import TaskArea from "../components/TaskArea";
+import Header from "../features/todos/Header";
+import Sidebar from "../features/todos/Sidebar";
+import TaskArea from "../features/todos/TaskArea";
 import { useMediaQuery } from "../hooks/useMediaQuery";
 
 export default function TodosPage() {

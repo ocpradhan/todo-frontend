@@ -1,10 +1,10 @@
 import { BrowserRouter, Navigate, Route, Routes } from "react-router";
-import TodosPage from "./features/todos/pages/TodosPage";
-import TodaysTasks from "./features/todos/components/TodaysTasks";
-import UpcomingTasks from "./features/todos/components/UpcomingTasks";
-import CompletedTasks from "./features/todos/components/CompletedTasks";
-import AllTasks from "./features/todos/components/AllTasks";
-import NotFoundPage from "./components/feedback/NotFoundPage";
+import TodosPage from "./pages/TodosPage";
+import TodaysTasks from "./features/todos/TodaysTasks";
+import UpcomingTasks from "./features/todos/UpcomingTasks";
+import CompletedTasks from "./features/todos/CompletedTasks";
+import AllTasks from "./features/todos/AllTasks";
+import NotFoundPage from "./ui/NotFoundPage";
 
 export default function App() {
   return (

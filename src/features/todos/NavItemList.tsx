@@ -1,5 +1,5 @@
 import { NavLink } from "react-router";
-import type { NavItemProps } from "../types/navItem.types";
+import type { NavItemProps } from "./types/navItem.types";
 
 type Props = {
   navItem: NavItemProps;

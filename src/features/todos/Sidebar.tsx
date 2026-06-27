@@ -1,6 +1,6 @@
 import { ChevronLeft, ChevronsRight } from "lucide-react";
-import Button from "../../../components/common/Button";
-import Logo from "../../../components/common/Logo";
+import Button from "../../ui/Button";
+import Logo from "../../ui/Logo";
 import NavList from "./NavList";
 
 type SidebarProps = {
